@@ -5,6 +5,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
      <link rel="stylesheet" href="style.css"> 
+     <script src="https://smtpjs.com/v3/smtp.js"></script>
      <title>Abdullah Saeed</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
           </nav>
           <a href="#contact">Contact</a>
      </header>
-     <section class="main" style="display: none;">
+     <section class="main">
           <div>
                <p>Abdullah Saeed</p>
                <h2>Web developer</h2>
@@ -31,22 +32,106 @@
      <section class="skills" id="skills">
           <h2 class="title">Skills</h2>
      </section>
-     <section class="projects" id="projects">
+     <section id="projects">
           <h2 class="title">Projects</h2>
           <div class="content">
-               <div class="project-card">
-                    <div class="project-image">
+               <div class="card">
+                    <div class="card-image">
                          <img src="/images/project_1.png"/>
+                    </div>
+                    <div class="project-info">
+                         <p class="project-desc">To-do list</p>
+                         <nav class="project-links">
+                              <a class="link" href="https://abdullah-saeed-bb.github.io/To-Do-website" target="_blank">OPEN</a>
+                              <a class="link" href="https://github.com/Abdullah-Saeed-BB/To-Do-website" target="_blank">More details</a>
+                         </nav>
+                    </div>
+               </div>
+               <div class="card">
+                    <div class="card-image">
+                         <img src="/images/project_2.png"/>
                     </div>
                     <div class="project-info">
                          <p class="project-desc">Basic online store.</p>
                          <nav class="project-links">
-                              <a class="project-live-demo" href="" target="_blank">OPEN</a>
-                              <a class="project-details" target="_blank">More details</a>
+                              <a class="link" href="https://abdullah-saeed-bb.github.io/online-store-website/indexs/home" target="_blank">OPEN</a>
+                              <a class="link" href="https://github.com/Abdullah-Saeed-BB/online-store-website" target="_blank">More details</a>
+                         </nav>
+                    </div>
+               </div>
+               <div class="card">
+                    <div class="card-image">
+                         <img src="/images/project_3.png"/>
+                    </div>
+                    <div class="project-info">
+                         <p class="project-desc">Weather report.</p>
+                         <nav class="project-links">
+                              <a class="link" href="https://abdullah-saeed-bb.github.io/weather-report" target="_blank">OPEN</a>
+                              <a class="link" href="https://github.com/Abdullah-Saeed-BB/weather-report" target="_blank">More details</a>
                          </nav>
                     </div>
                </div>
           </div>
      </section>
+     <section id="certificates">
+          <h2 class="title">Certificates</h2>
+          <div class="content">
+               <div class="certif-card">
+                    <h2 class="certif-title">Python for Everybody</h2>
+                    <p class="certif-desc">Completed the Python for Everybody Specialization by the University of Michigan on Coursera. Showcased proficiency in Python, including fundamentals, data structures, databases, And web development.</p>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/427VYNRZU5DC" class="link" target="_blank">Certificate link</a>
+               </div>
+               <div class="certif-card">
+                    <h2 class="certif-title">PostgreSQL for Everybody</h2>
+                    <p class="certif-desc">Completed the PostgreSQL for Everybody Specialization for a database management system, issued by the University of Michigan on Coursera.</p>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/UA6VER5QA68D" class="link" target="_blank">Certificate link</a>
+               </div>
+               <div class="certif-card">
+                    <h2 class="certif-title">Git & Github</h2>
+                    <p class="certif-desc">Completed the Git & GitHub course for software project management. The course delved into the Git fundamentals for tracking changes and updates, and how to use the GitHub platform to share codes.</p>
+                    <a href="https://drive.google.com/file/d/1qIJ8CwThXSheKIhqSIs7me73FD_2qAo6/view" class="link" target="_blank">Certificate link</a>
+               </div>
+          </div>
+     </section>
+     <section id="contact">
+          <h2 class="title">Send me a message</h2>
+          <!-- <div class="content"> -->
+               <form onsubmit="sendEmail(); reset(); return false">
+                    <input class="contact-input" type="text" id="name" placeholder="Name" required>
+                    <input class="contact-input" type="text" id="email" placeholder="Email" required>
+                    <textarea class="contact-subject" id="body" placeholder="Message" required></textarea>
+                    <button class="contact-submit" type="submit">Send</button>               
+               </form>
+          <!-- </div> -->
+     </section>
+     <footer id="footer">
+          <p>abdullah.saeed.b.b@gmail.com</p>
+          <nav>
+               <a target="_blank" href="https://www.linkedin.com/in/abdullah-saeed-dev"><i class="fa-brands fa-linkedin"></i></a>
+               <a target="_blank" href="https://github.com/Abdullah-Saeed-BB"><i class="fa-brands fa-github"></i></a>
+          </nav>
+     </footer>
+
+     <script src="https://smtpjs.com/v3/smtp.js"></script>
+     <script>
+          function sendEmail() {
+               const body = `
+                    Name: ${document.getElementById('name').value}<br>
+                    Email: ${document.getElementById('email').value}<br>
+                    ${'-'.repeat(30)}<br>
+                    ${document.getElementById('body').value}
+               `
+
+               Email.send({
+                    SecureToken : "0287c6f0-c223-453a-b6e6-729822256f52",
+                    To : 'abdullah.saeed.b.b@gmail.com',
+                    From : "abdullah.saeed.b.b@gmail.com",
+                    Subject : "Message from the personal website",
+                    Body : body
+               }).then(
+                    message => alert(message)
+               );
+          }
+     </script>
 </body>
 </html>

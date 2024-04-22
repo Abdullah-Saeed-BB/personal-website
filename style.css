@@ -51,6 +51,19 @@ section {
      flex-wrap: wrap;
 }
 
+.link {
+     text-decoration: none;
+     color: #3a6cf4;
+     font-weight: 600;
+     margin-top: 10px;
+     letter-spacing: 1px;
+     font-size: 1em;
+}
+
+.link:hover {
+     color: #4f12dd;
+}
+
 /* Main section */
 
 .main {
@@ -113,25 +126,25 @@ section {
 
 /* Project section */
 
-.project-card {
+.card {
      border: 1px solid black;
      min-height: 14em;
      overflow: hidden;
      width: 23em;
      border-radius: 10px;
      margin: 20px;
-     transition: 0.7s ease;
+     transition: 0.5s ease;
 }
 
-.project-card:hover {
+.card:hover {
      transform: scale(1.05);
 }
 
-.project-card:hover img {
+.card:hover img {
      opacity: 0.9;
 }
 
-.project-image img {
+.card-image img {
      width: 100%;
 }
 
@@ -141,7 +154,7 @@ section {
 }
 
 .project-desc {
-     font-size: 0.8em;
+     font-size: 0.9em;
 }
 
 .project-links {
@@ -149,21 +162,77 @@ section {
      justify-content: space-between;
 }
 
-.project-links a {
-     text-decoration: none;
-     color: #3a6cf4;
+/* Certificates section */
+
+.certif-card {
+     width: 23em;
+     min-height: 10em;
+     margin: 20px;
+     text-align: center;
+}
+
+.certif-card .link {
+     display: inline-block;
      margin-top: 10px;
-}
 
-.project-live-demo {
      font-weight: 700;
 }
 
-.project-details {
-     font-weight: 600;
+/* Contact section */
+
+#contact form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
 }
 
-.project-links a:hover {
-     color: #0a49f6;
-     font-weight: 700;
+.contact-input, .contact-subject {
+     border: 1px solid #b9a5e7;
+     width: 100%;
+     max-width: 600px;
+     margin-bottom: 20px;
+     padding: 10px;
+     transition: 0.2s;
+     border-radius: 5px;
+}
+
+.contact-subject {
+     resize: vertical;
+}
+
+.contact-input:focus, .contact-subject:focus {
+     outline: none;
+     border-color: #4f23b4;
+}
+
+.contact-submit {
+     border: none;
+     background-color: #3a6cf4;
+     color: white;
+     font-size: 1.1em;
+     padding: 5px 30px;
+     width: fit-content;
+     border-radius: 8px;
+     transition: 0.5s ease;
+}
+
+.contact-submit:hover {
+     background-color: #0a49f6;
+     transform: scale(1.1);
+}
+
+/* Footer */
+
+#footer {
+     padding: 20px 200px;
+     background-color: #000;
+     color: #fff;
+     display: flex;
+     justify-content: space-between;
+}
+
+#footer a {
+     color: #fff;
+     font-size: 1.2em;
+     padding-left: 15px;
 }
