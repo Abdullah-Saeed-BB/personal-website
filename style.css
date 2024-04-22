@@ -24,7 +24,10 @@ header a {
      font-weight: 500;
      color: #3a6cf4;
      font-size: 1em;
-     padding-left: 20px;
+}
+
+.navigation a {
+     padding-right: 20px;
 }
 
 header a:hover {
@@ -33,6 +36,15 @@ header a:hover {
 
 section {
      padding: 100px 200px;
+}
+
+section:nth-child(even):not(.main) {
+     background: url(images/sections_background_1.jpg) no-repeat;
+     background-size: cover;
+}
+section:nth-child(odd) {
+     background: url(images/sections_background_2.jpg);
+     background-size: cover;
 }
 
 .title {
@@ -124,10 +136,43 @@ section {
      color: #b3b3b3;
 }
 
+/* Skills section */
+
+.skill-card, .service-card {
+     text-align: center;
+     margin: 15px;
+     padding: 20px;
+     box-shadow: 0 3px 8px #bbbbbb;
+}
+
+.skill-card {
+     width: 100%;
+     max-width: 15em;
+}
+
+.service-card {
+     width: 100%;
+     max-width: 22em;
+}
+
+.card-title {
+     color: #7c9efa;
+     padding-bottom: 10px;
+}
+
+.skills-list {
+     list-style-type: none;
+}
+
+.skills-list li {
+     padding-bottom: 8px;
+}
+
 /* Project section */
 
 .card {
-     border: 1px solid black;
+     border: 1px solid #fff;
+     background-color: #fff;
      min-height: 14em;
      overflow: hidden;
      width: 23em;
@@ -178,6 +223,10 @@ section {
      font-weight: 700;
 }
 
+.certif-title {
+     margin-bottom: 15px;
+}
+
 /* Contact section */
 
 #contact form {
@@ -187,7 +236,7 @@ section {
 }
 
 .contact-input, .contact-subject {
-     border: 1px solid #b9a5e7;
+     border: 2px solid #fff;
      width: 100%;
      max-width: 600px;
      margin-bottom: 20px;
@@ -202,7 +251,7 @@ section {
 
 .contact-input:focus, .contact-subject:focus {
      outline: none;
-     border-color: #4f23b4;
+     border-color: #9e89d1;
 }
 
 .contact-submit {
@@ -223,16 +272,41 @@ section {
 
 /* Footer */
 
-#footer {
-     padding: 20px 200px;
-     background-color: #000;
+footer {
+     padding: 1.5em;
+     background-color: #0b1129;
      color: #fff;
      display: flex;
      justify-content: space-between;
 }
 
-#footer a {
-     color: #fff;
-     font-size: 1.2em;
-     padding-left: 15px;
+footer .social-navtigation a {
+     font-size: 1.3em;
+}
+
+
+@media screen and (max-width: 1075px) {
+     header {
+          padding: 12px 20px;
+     }    
+     
+     .navigation a {
+          padding-right: 12px;
+     }
+
+     section {
+          padding: 80px 20px;
+     }
+}
+
+@media screen and (max-width: 450px) {
+     body {
+          font-size: 14px;
+     }     
+}
+
+@media screen and (max-width: 280px) {
+     body {
+          font-size: 12px;
+     }
 }
