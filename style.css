@@ -8,8 +8,10 @@
      scroll-behavior: smooth;
 }
 
+/* Header */
+
 header {
-     background-color: #f0f0f0;
+     background-color: #fff;
      width: 100%;
      display: flex;
      justify-content: space-between;
@@ -34,6 +36,8 @@ header a:hover {
      color: #4f12dd
 }
 
+/* Sections */
+
 section {
      padding: 100px 200px;
 }
@@ -42,10 +46,12 @@ section:nth-child(even):not(.main) {
      background: url(images/sections_background_1.jpg) no-repeat;
      background-size: cover;
 }
-section:nth-child(odd) {
+section:nth-child(odd):not(#skills) {
      background: url(images/sections_background_2.jpg);
      background-size: cover;
 }
+
+/* Others */
 
 .title {
      text-align: center;
@@ -83,27 +89,32 @@ section:nth-child(odd) {
      width: 100%;
      min-height: 100vh;
      display: flex;
+     justify-content: center;
      align-items: center;
+     text-align: center;
+
      background: url(images/Main_background.jpg) no-repeat;
      background-size: cover;
-     background-position: left;
-}
-
-.main p{ 
-     font-size: 1.1em;
-}
-
-.main h2{
-     color: #4e9eff;
-     margin-top: 7px;
-     font-size: 3em;
-     letter-spacing: 2px;
+     background-position: center;
 }
 
 .main h3 {
-     font-size: 1.6em;
+     margin-bottom: 0px;
+     font-size: 2em;
      letter-spacing: 1px;
-     margin: 10px 0;
+}
+
+.main h2 {
+     margin-bottom: 20px;
+     font-size: 3.2em;
+     letter-spacing: 1px;
+     color: #4e9eff;
+}
+
+.main p{
+     margin-bottom: 20px;
+     font-size: 1.2em;
+     letter-spacing: 1px;
 }
 
 .main-btn {
@@ -114,7 +125,7 @@ section:nth-child(odd) {
      font-size: 1.1em;
      font-weight: 600;
      letter-spacing: 1px;
-     padding: 0.9em 2.2em;
+     padding: 0.75em 1.5em;
      border-radius: 15px;
      margin-bottom: 20px;
      transition: 0.7s ease;
@@ -127,8 +138,8 @@ section:nth-child(odd) {
 
 .social-navtigation a {
      color: #fff;
-     font-size: 1.7em;
-     padding-right: 30px;
+     font-size: 1.6em;
+     padding: 0 15px;
      transition: 0.7s;
 }
 
@@ -263,6 +274,7 @@ section:nth-child(odd) {
      width: fit-content;
      border-radius: 8px;
      transition: 0.5s ease;
+     margin-top: 20px;
 }
 
 .contact-submit:hover {
@@ -281,6 +293,7 @@ footer {
 }
 
 footer .social-navtigation a {
+     padding: 0 0 0 30px;
      font-size: 1.3em;
 }
 
@@ -302,7 +315,11 @@ footer .social-navtigation a {
 @media screen and (max-width: 450px) {
      body {
           font-size: 14px;
-     }     
+     }
+
+     .main h2 {
+          font-size: 2.6em;
+     }
 }
 
 @media screen and (max-width: 280px) {
